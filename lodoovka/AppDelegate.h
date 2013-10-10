@@ -7,9 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Screen.h"
+
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, weak) IBOutlet Screen *screen;
+
++ (Screen*) globalScreen;
 
 @end

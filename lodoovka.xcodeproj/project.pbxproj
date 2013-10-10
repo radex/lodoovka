@@ -14,21 +14,24 @@
 		6E23522018072489004FDA28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23521F18072489004FDA28 /* AppDelegate.m */; };
 		6E23522318072489004FDA28 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E23522118072489004FDA28 /* MainMenu.xib */; };
 		6E23522518072489004FDA28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E23522418072489004FDA28 /* Images.xcassets */; };
-		6E23522C18072489004FDA28 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E23522B18072489004FDA28 /* XCTest.framework */; };
-		6E23522D18072489004FDA28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E23520C18072489004FDA28 /* Cocoa.framework */; };
-		6E23523518072489004FDA28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E23523318072489004FDA28 /* InfoPlist.strings */; };
-		6E23523718072489004FDA28 /* lodoovkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23523618072489004FDA28 /* lodoovkaTests.m */; };
+		6E235242180724F9004FDA28 /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235241180724F8004FDA28 /* Screen.m */; };
+		6E23525B180725D5004FDA28 /* CATransaction+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235244180725D5004FDA28 /* CATransaction+radex.m */; };
+		6E23525C180725D5004FDA28 /* NSBezierPath+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235246180725D5004FDA28 /* NSBezierPath+radex.m */; };
+		6E23525D180725D5004FDA28 /* NSButtonCell+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235248180725D5004FDA28 /* NSButtonCell+radex.m */; };
+		6E23525E180725D5004FDA28 /* NSColor+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23524A180725D5004FDA28 /* NSColor+radex.m */; };
+		6E23525F180725D5004FDA28 /* NSGradient+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23524C180725D5004FDA28 /* NSGradient+radex.m */; };
+		6E235260180725D5004FDA28 /* NSImage+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23524E180725D5004FDA28 /* NSImage+radex.m */; };
+		6E235261180725D5004FDA28 /* NSTimer+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235250180725D5004FDA28 /* NSTimer+radex.m */; };
+		6E235262180725D5004FDA28 /* NSView+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235252180725D5004FDA28 /* NSView+radex.m */; };
+		6E235263180725D5004FDA28 /* NSWindow+radex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235254180725D5004FDA28 /* NSWindow+radex.m */; };
+		6E235264180725D5004FDA28 /* RPFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235257180725D5004FDA28 /* RPFlippedView.m */; };
+		6E235265180725D5004FDA28 /* RPImageButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E235259180725D5004FDA28 /* RPImageButtonCell.m */; };
+		6E2352681807269C004FDA28 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2352671807269C004FDA28 /* QuartzCore.framework */; };
+		6E23526A18072782004FDA28 /* Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23526918072782004FDA28 /* Drawing.m */; };
+		6E23526E180735FE004FDA28 /* Lodoovka.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23526D180735FE004FDA28 /* Lodoovka.m */; };
+		6E2352741807369D004FDA28 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2352731807369D004FDA28 /* Window.m */; };
+		6E23527718074260004FDA28 /* WindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23527618074260004FDA28 /* WindowManager.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6E23522E18072489004FDA28 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E23520118072489004FDA28 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E23520818072489004FDA28;
-			remoteInfo = lodoovka;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6E23520918072489004FDA28 /* lodoovka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lodoovka.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,11 +48,45 @@
 		6E23521F18072489004FDA28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6E23522218072489004FDA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6E23522418072489004FDA28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6E23522A18072489004FDA28 /* lodoovkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lodoovkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E23522B18072489004FDA28 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6E23523218072489004FDA28 /* lodoovkaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lodoovkaTests-Info.plist"; sourceTree = "<group>"; };
 		6E23523418072489004FDA28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E23523618072489004FDA28 /* lodoovkaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lodoovkaTests.m; sourceTree = "<group>"; };
+		6E235240180724F8004FDA28 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		6E235241180724F8004FDA28 /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen.m; sourceTree = "<group>"; };
+		6E235243180725D5004FDA28 /* CATransaction+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+radex.h"; sourceTree = "<group>"; };
+		6E235244180725D5004FDA28 /* CATransaction+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+radex.m"; sourceTree = "<group>"; };
+		6E235245180725D5004FDA28 /* NSBezierPath+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+radex.h"; sourceTree = "<group>"; };
+		6E235246180725D5004FDA28 /* NSBezierPath+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+radex.m"; sourceTree = "<group>"; };
+		6E235247180725D5004FDA28 /* NSButtonCell+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButtonCell+radex.h"; sourceTree = "<group>"; };
+		6E235248180725D5004FDA28 /* NSButtonCell+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButtonCell+radex.m"; sourceTree = "<group>"; };
+		6E235249180725D5004FDA28 /* NSColor+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+radex.h"; sourceTree = "<group>"; };
+		6E23524A180725D5004FDA28 /* NSColor+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+radex.m"; sourceTree = "<group>"; };
+		6E23524B180725D5004FDA28 /* NSGradient+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGradient+radex.h"; sourceTree = "<group>"; };
+		6E23524C180725D5004FDA28 /* NSGradient+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGradient+radex.m"; sourceTree = "<group>"; };
+		6E23524D180725D5004FDA28 /* NSImage+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+radex.h"; sourceTree = "<group>"; };
+		6E23524E180725D5004FDA28 /* NSImage+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+radex.m"; sourceTree = "<group>"; };
+		6E23524F180725D5004FDA28 /* NSTimer+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+radex.h"; sourceTree = "<group>"; };
+		6E235250180725D5004FDA28 /* NSTimer+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+radex.m"; sourceTree = "<group>"; };
+		6E235251180725D5004FDA28 /* NSView+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+radex.h"; sourceTree = "<group>"; };
+		6E235252180725D5004FDA28 /* NSView+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+radex.m"; sourceTree = "<group>"; };
+		6E235253180725D5004FDA28 /* NSWindow+radex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+radex.h"; sourceTree = "<group>"; };
+		6E235254180725D5004FDA28 /* NSWindow+radex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+radex.m"; sourceTree = "<group>"; };
+		6E235255180725D5004FDA28 /* PlusRadex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusRadex.h; sourceTree = "<group>"; };
+		6E235256180725D5004FDA28 /* RPFlippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPFlippedView.h; sourceTree = "<group>"; };
+		6E235257180725D5004FDA28 /* RPFlippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPFlippedView.m; sourceTree = "<group>"; };
+		6E235258180725D5004FDA28 /* RPImageButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPImageButtonCell.h; sourceTree = "<group>"; };
+		6E235259180725D5004FDA28 /* RPImageButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPImageButtonCell.m; sourceTree = "<group>"; };
+		6E23525A180725D5004FDA28 /* RPSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPSingleton.h; sourceTree = "<group>"; };
+		6E2352671807269C004FDA28 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6E23526918072782004FDA28 /* Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawing.m; sourceTree = "<group>"; };
+		6E23526B180727A9004FDA28 /* Drawing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
+		6E23526C180735FE004FDA28 /* Lodoovka.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lodoovka.h; sourceTree = "<group>"; };
+		6E23526D180735FE004FDA28 /* Lodoovka.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lodoovka.m; sourceTree = "<group>"; };
+		6E2352721807369D004FDA28 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		6E2352731807369D004FDA28 /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
+		6E23527518074260004FDA28 /* WindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManager.h; sourceTree = "<group>"; };
+		6E23527618074260004FDA28 /* WindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2352681807269C004FDA28 /* QuartzCore.framework in Frameworks */,
 				6E23520D18072489004FDA28 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E23522718072489004FDA28 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E23522D18072489004FDA28 /* Cocoa.framework in Frameworks */,
-				6E23522C18072489004FDA28 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				6E23520918072489004FDA28 /* lodoovka.app */,
-				6E23522A18072489004FDA28 /* lodoovkaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +123,7 @@
 		6E23520B18072489004FDA28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E2352671807269C004FDA28 /* QuartzCore.framework */,
 				6E23520C18072489004FDA28 /* Cocoa.framework */,
 				6E23522B18072489004FDA28 /* XCTest.framework */,
 				6E23520E18072489004FDA28 /* Other Frameworks */,
@@ -115,11 +144,22 @@
 		6E23521218072489004FDA28 /* lodoovka */ = {
 			isa = PBXGroup;
 			children = (
+				6E235266180725F7004FDA28 /* +radex */,
 				6E23521E18072489004FDA28 /* AppDelegate.h */,
 				6E23521F18072489004FDA28 /* AppDelegate.m */,
 				6E23522118072489004FDA28 /* MainMenu.xib */,
 				6E23522418072489004FDA28 /* Images.xcassets */,
 				6E23521318072489004FDA28 /* Supporting Files */,
+				6E235240180724F8004FDA28 /* Screen.h */,
+				6E235241180724F8004FDA28 /* Screen.m */,
+				6E23526B180727A9004FDA28 /* Drawing.h */,
+				6E23526918072782004FDA28 /* Drawing.m */,
+				6E23526C180735FE004FDA28 /* Lodoovka.h */,
+				6E23526D180735FE004FDA28 /* Lodoovka.m */,
+				6E2352721807369D004FDA28 /* Window.h */,
+				6E2352731807369D004FDA28 /* Window.m */,
+				6E23527518074260004FDA28 /* WindowManager.h */,
+				6E23527618074260004FDA28 /* WindowManager.m */,
 			);
 			path = lodoovka;
 			sourceTree = "<group>";
@@ -154,6 +194,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6E235266180725F7004FDA28 /* +radex */ = {
+			isa = PBXGroup;
+			children = (
+				6E235243180725D5004FDA28 /* CATransaction+radex.h */,
+				6E235244180725D5004FDA28 /* CATransaction+radex.m */,
+				6E235245180725D5004FDA28 /* NSBezierPath+radex.h */,
+				6E235246180725D5004FDA28 /* NSBezierPath+radex.m */,
+				6E235247180725D5004FDA28 /* NSButtonCell+radex.h */,
+				6E235248180725D5004FDA28 /* NSButtonCell+radex.m */,
+				6E235249180725D5004FDA28 /* NSColor+radex.h */,
+				6E23524A180725D5004FDA28 /* NSColor+radex.m */,
+				6E23524B180725D5004FDA28 /* NSGradient+radex.h */,
+				6E23524C180725D5004FDA28 /* NSGradient+radex.m */,
+				6E23524D180725D5004FDA28 /* NSImage+radex.h */,
+				6E23524E180725D5004FDA28 /* NSImage+radex.m */,
+				6E23524F180725D5004FDA28 /* NSTimer+radex.h */,
+				6E235250180725D5004FDA28 /* NSTimer+radex.m */,
+				6E235251180725D5004FDA28 /* NSView+radex.h */,
+				6E235252180725D5004FDA28 /* NSView+radex.m */,
+				6E235253180725D5004FDA28 /* NSWindow+radex.h */,
+				6E235254180725D5004FDA28 /* NSWindow+radex.m */,
+				6E235255180725D5004FDA28 /* PlusRadex.h */,
+				6E235256180725D5004FDA28 /* RPFlippedView.h */,
+				6E235257180725D5004FDA28 /* RPFlippedView.m */,
+				6E235258180725D5004FDA28 /* RPImageButtonCell.h */,
+				6E235259180725D5004FDA28 /* RPImageButtonCell.m */,
+				6E23525A180725D5004FDA28 /* RPSingleton.h */,
+			);
+			name = "+radex";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,24 +245,6 @@
 			productReference = 6E23520918072489004FDA28 /* lodoovka.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E23522918072489004FDA28 /* lodoovkaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E23523D1807248A004FDA28 /* Build configuration list for PBXNativeTarget "lodoovkaTests" */;
-			buildPhases = (
-				6E23522618072489004FDA28 /* Sources */,
-				6E23522718072489004FDA28 /* Frameworks */,
-				6E23522818072489004FDA28 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6E23522F18072489004FDA28 /* PBXTargetDependency */,
-			);
-			name = lodoovkaTests;
-			productName = lodoovkaTests;
-			productReference = 6E23522A18072489004FDA28 /* lodoovkaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,11 +253,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Radosław Pietruszewski";
-				TargetAttributes = {
-					6E23522918072489004FDA28 = {
-						TestTargetID = 6E23520818072489004FDA28;
-					};
-				};
 			};
 			buildConfigurationList = 6E23520418072489004FDA28 /* Build configuration list for PBXProject "lodoovka" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -220,7 +268,6 @@
 			projectRoot = "";
 			targets = (
 				6E23520818072489004FDA28 /* lodoovka */,
-				6E23522918072489004FDA28 /* lodoovkaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,14 +284,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E23522818072489004FDA28 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E23523518072489004FDA28 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -253,27 +292,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E23522018072489004FDA28 /* AppDelegate.m in Sources */,
+				6E23525B180725D5004FDA28 /* CATransaction+radex.m in Sources */,
 				6E23521918072489004FDA28 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E23522618072489004FDA28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E23523718072489004FDA28 /* lodoovkaTests.m in Sources */,
+				6E23527718074260004FDA28 /* WindowManager.m in Sources */,
+				6E235264180725D5004FDA28 /* RPFlippedView.m in Sources */,
+				6E23526E180735FE004FDA28 /* Lodoovka.m in Sources */,
+				6E23525F180725D5004FDA28 /* NSGradient+radex.m in Sources */,
+				6E235265180725D5004FDA28 /* RPImageButtonCell.m in Sources */,
+				6E23525C180725D5004FDA28 /* NSBezierPath+radex.m in Sources */,
+				6E235262180725D5004FDA28 /* NSView+radex.m in Sources */,
+				6E23525E180725D5004FDA28 /* NSColor+radex.m in Sources */,
+				6E235242180724F9004FDA28 /* Screen.m in Sources */,
+				6E235260180725D5004FDA28 /* NSImage+radex.m in Sources */,
+				6E23526A18072782004FDA28 /* Drawing.m in Sources */,
+				6E23525D180725D5004FDA28 /* NSButtonCell+radex.m in Sources */,
+				6E235261180725D5004FDA28 /* NSTimer+radex.m in Sources */,
+				6E235263180725D5004FDA28 /* NSWindow+radex.m in Sources */,
+				6E2352741807369D004FDA28 /* Window.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6E23522F18072489004FDA28 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E23520818072489004FDA28 /* lodoovka */;
-			targetProxy = 6E23522E18072489004FDA28 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6E23521518072489004FDA28 /* InfoPlist.strings */ = {
@@ -327,7 +366,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -366,7 +405,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -387,6 +426,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lodoovka/lodoovka-Prefix.pch";
 				INFOPLIST_FILE = "lodoovka/lodoovka-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -400,48 +440,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lodoovka/lodoovka-Prefix.pch";
 				INFOPLIST_FILE = "lodoovka/lodoovka-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		6E23523E1807248A004FDA28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/lodoovka.app/Contents/MacOS/lodoovka";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lodoovka/lodoovka-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "lodoovkaTests/lodoovkaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		6E23523F1807248A004FDA28 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/lodoovka.app/Contents/MacOS/lodoovka";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lodoovka/lodoovka-Prefix.pch";
-				INFOPLIST_FILE = "lodoovkaTests/lodoovkaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -462,14 +463,6 @@
 			buildConfigurations = (
 				6E23523B1807248A004FDA28 /* Debug */,
 				6E23523C1807248A004FDA28 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		6E23523D1807248A004FDA28 /* Build configuration list for PBXNativeTarget "lodoovkaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E23523E1807248A004FDA28 /* Debug */,
-				6E23523F1807248A004FDA28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
