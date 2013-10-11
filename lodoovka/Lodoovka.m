@@ -11,23 +11,10 @@
 #import "Window.h"
 #import "WindowManager.h"
 
-void draw_desktop()
-{
-    setColor(180, 180, 180);
-    drawRect(0, 0, 800, 600);
-}
-
-//window_ref global_windows[100];
-
 void lodoovka_main()
 {
     lodoovka_redraw();
     wndmgr_init();
-    
-    wndmgr_add(window_create(50, 70,   300, 200, "1"));
-    wndmgr_add(window_create(100, 100, 400, 300, "2"));
-    wndmgr_add(window_create(300, 300, 400, 300, "3"));
-    wndmgr_add(window_create(200, 450, 200, 100, "4"));
 }
 
 void lodoovka_redraw()
@@ -36,11 +23,53 @@ void lodoovka_redraw()
     
     window_sref sref = window_stack;
     
-    if(!window_stack) return;
-    
-    do
+    if(window_stack)
     {
-        window_draw(sref->wnd);
+        do
+        {
+            window_draw(sref->wnd);
+        }
+        while((sref = sref->next));
     }
-    while((sref = sref->next));
+    
+    draw_plusbtn();
+}
+
+void draw_desktop()
+{
+    setColor(180, 180, 180);
+    drawRect(0, 0, 800, 600);
+}
+
+l_rect plusbtnf()
+{
+    l_rect lodoovka_screenf = {0, 0, 800, 600};
+    
+    return bl_corner(inset_recta(lodoovka_screenf, 15), 32, 32);
+}
+
+void draw_plusbtn()
+{
+    l_rect f = plusbtnf();
+    
+    setGrey(80);
+    drawRectr(f);
+    drawRectr(inset_rectc(f, 1, -1, -1, 1));
+    setGrey(200);
+    drawRectr(inset_recta(f, 1));
+}
+
+short window_counter = 0;
+
+void plusbtn_clicked()
+{
+    short x = arc4random() % (800 - 50);
+    short y = arc4random() % (600 - 50);
+    short w = arc4random() % (800 - 50) + 50;
+    short h = arc4random() % (600 - 50) + 50;
+    
+    char *title;
+    asprintf(&title, "%i", window_counter++);
+    
+    wndmgr_add(window_create(x, y, w, h, title));
 }

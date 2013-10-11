@@ -32,6 +32,7 @@ window_ref wndmgr_add(window_ref wnd)
     }
     
     lodoovka_redraw();
+    _wndmgr_log_windows();
     
     return wnd;
 }
@@ -164,13 +165,20 @@ void wndmgr_hangle_event(Event e)
 {
     if(e.type == ET_MouseDown)
     {
-        window_sref clicked_wnd = _wndmgr_find_clicked(e);
-        if(!clicked_wnd) return;
-        
-        _wndmgr_keywnd = clicked_wnd->wnd;
-        
-        wndmgr_order_front(_wndmgr_keywnd);
-        window_handle_event(_wndmgr_keywnd, e);
+        if(point_in_rect(e.loc, plusbtnf()))
+        {
+            plusbtn_clicked();
+        }
+        else
+        {
+            window_sref clicked_wnd = _wndmgr_find_clicked(e);
+            if(!clicked_wnd) return;
+            
+            _wndmgr_keywnd = clicked_wnd->wnd;
+            
+            wndmgr_order_front(_wndmgr_keywnd);
+            window_handle_event(_wndmgr_keywnd, e);
+        }
     }
     else
     {

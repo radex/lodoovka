@@ -24,7 +24,7 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    NSLog(@"drawin'");
+    //NSLog(@"drawin'");
     [_contents drawInRect:self.bounds fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];
 }
 
