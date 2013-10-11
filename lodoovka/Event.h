@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
 //
 
+#import "Geometry.h"
+
 enum Event_Type
 {
     ET_MouseDown,
@@ -16,5 +18,6 @@ enum Event_Type
 typedef struct Event
 {
     enum Event_Type type;
-    short x, y;
+    l_point loc;
 } Event;
+

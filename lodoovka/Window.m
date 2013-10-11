@@ -30,43 +30,58 @@ void window_draw(window_ref wnd)
     int y = frame.y;
     int w = frame.w;
     int h = frame.h;
-//
-//    const int rzr = 4;
-//    const int rzr_c = 20;
-//    const int rzr_cb = 21;
-//    
+
+    const int rzr = 4;
+    const int rzr_c = 25;
+    const int rzr_cb = rzr_c + 1;
+    const int ttb = 20;
+    
+    // border
+    
     setColor(80, 80, 80);
-    drawRect(x, y, w, h);
+    drawRectr(frame);
+    
+    setColor(200, 200, 200);
+    drawRectr(inset_recta(frame, 1));
+    
+    // resizers
+
+    setColor(80, 80, 80);
+    drawRect(x+1,              y+1,                rzr_cb, rzr_cb);
+    drawRect(x+w - (rzr_cb+1), y+1,                rzr_cb, rzr_cb);
+    drawRect(x+1,              y+h - (rzr_cb+1),   rzr_cb, rzr_cb);
+    drawRect(x+w - (rzr_cb+1), y+h - (rzr_cb+1),   rzr_cb, rzr_cb);
+
+    setColor(200, 200, 200);
+    drawRect(x+1,            y+1,              rzr_c, rzr_c);
+    drawRect(x+w - (rzr_cb), y+1,              rzr_c, rzr_c);
+    drawRect(x+1,            y+h - (rzr_cb),   rzr_c, rzr_c);
+    drawRect(x+w - (rzr_cb), y+h - (rzr_cb),   rzr_c, rzr_c);
+    
+    // content border
+    
+    setColor(80, 80, 80);
+    drawRectr(inset_recta(frame, 1+rzr));
+    
+    // titlebar and close button
+    
+    setColor(200, 200, 200);
+    l_rect ttbf = inset_recta(frame, 1+rzr+1);
+    ttbf.h = ttb;
+    
+    l_rect cbtnf = ttbf;
+    cbtnf.w = ttb;
+    drawRectr(cbtnf);
+    
+    ttbf = inset_rectc(ttbf, 0, 0, 0, ttb + 1);
+    drawRectr(ttbf);
+    
+    // content
     
     setColor(230, 230, 230);
-    drawRect(x + 1, y + 1, w - 2, h - 2);
-//
-//    setColor(80, 80, 80);
-//    drawRect(x + 1,              y + 1,        rzr_cb, rzr_cb);
-//    drawRect(x + w - rzr_cb - 1, y + 1,        rzr_cb, rzr_cb);
-//    drawRect(x + 1,              y + h - 22,   rzr_cb, rzr_cb);
-//    drawRect(x + w - rzr_cb - 1, y + h - 22,   rzr_cb, rzr_cb);
-//    
-//    setColor(200, 200, 200);
-//    drawRect(x + 1,            y + 1,             20, 20);
-//    drawRect(x + w - 21,  y + 1,             20, 20);
-//    drawRect(x + 1,            y + h - 21,   20, 20);
-//    drawRect(x + w - 21,  y + h - 21,   20, 20);
-//    
-//    setColor(80, 80, 80);
-//    drawRect(x + 5, y + 5, w - 10, h - 10);
-//    
-//    setColor(200, 200, 200);
-//    drawRect(x + 6, y + 6, w - 12, h - 12);
-//    
-//    setColor(230, 230, 230);
-//    drawRect(x + 6, y + 6, w - 12, 20);
-//    
-//    setColor(80, 80, 80);
-//    drawLineH(x + 6, y + 26, w - 12);
-//    drawLineV(x + 6 + 20, y + 6, 20);
-//    drawLineV(x + 6 + 40, y + 6, 20);
-//    drawLineV(x + 6 + 60, y + 6, 20);
+    
+    l_rect contf = inset_rectc(inset_recta(frame, 1+rzr+1), ttb + 1, 0, 0, 0);
+    drawRectr(contf);
 }
 
 

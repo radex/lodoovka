@@ -6,8 +6,18 @@
 //  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+typedef struct
+{
+    short x, y;
+} l_point;
 
-@interface Geometry : NSObject
+typedef struct
+{
+    short x, y, w, h;
+} l_rect;
 
-@end
+BOOL point_in_rect(l_point point, l_rect rect);
+
+l_rect inset_recta(l_rect rect, short inset);
+l_rect inset_rectb(l_rect rect, short topbottom, short leftright);
+l_rect inset_rectc(l_rect rect, short top, short right, short bottom, short left);
