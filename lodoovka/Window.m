@@ -8,24 +8,28 @@
 
 #import "Window.h"
 #import "Drawing.h"
+#import "Lodoovka.h"
 
-window_ref window_create(short x, short y, short w, short h)
+window_ref window_create(short x, short y, short w, short h, const char *title)
 {
     window_ref wnd = malloc(sizeof(struct Window));
-    wnd->x = x;
-    wnd->y = y;
-    wnd->w = w;
-    wnd->h = h;
+    
+    l_rect frame = {x, y, w, h};
+    wnd->frame = frame;
+    
+    wnd->title = malloc(strlen(title));
+    strcpy(wnd->title, title);
     
     return wnd;
 }
 
 void window_draw(window_ref wnd)
 {
-    int x = wnd->x;
-    int y = wnd->y;
-    int w = wnd->w;
-    int h = wnd->h;
+    l_rect frame = wnd->frame;
+    int x = frame.x;
+    int y = frame.y;
+    int w = frame.w;
+    int h = frame.h;
 //
 //    const int rzr = 4;
 //    const int rzr_c = 20;
@@ -63,4 +67,28 @@ void window_draw(window_ref wnd)
 //    drawLineV(x + 6 + 20, y + 6, 20);
 //    drawLineV(x + 6 + 40, y + 6, 20);
 //    drawLineV(x + 6 + 60, y + 6, 20);
+}
+
+
+
+void window_handle_event(window_ref wnd, Event e)
+{
+//    NSLog(@"%s: %i @ %ix%i", wnd->title, e.type, e.loc.x, e.loc.y);
+    
+    if(e.type == ET_MouseDown)
+    {
+        wnd->_drag_loc = e.loc;
+    }
+    else if(e.type == ET_MouseDrag)
+    {
+        short dx = e.loc.x - wnd->_drag_loc.x;
+        short dy = e.loc.y - wnd->_drag_loc.y;
+        
+        wnd->frame.x += dx;
+        wnd->frame.y += dy;
+        
+        wnd->_drag_loc = e.loc;
+        
+        lodoovka_redraw();
+    }
 }

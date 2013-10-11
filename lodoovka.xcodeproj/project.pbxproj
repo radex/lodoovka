@@ -31,6 +31,7 @@
 		6E23526E180735FE004FDA28 /* Lodoovka.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23526D180735FE004FDA28 /* Lodoovka.m */; };
 		6E2352741807369D004FDA28 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2352731807369D004FDA28 /* Window.m */; };
 		6E23527718074260004FDA28 /* WindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23527618074260004FDA28 /* WindowManager.m */; };
+		6E76073B1807ECB500D97527 /* Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E76073A1807ECB500D97527 /* Geometry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,9 @@
 		6E2352731807369D004FDA28 /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
 		6E23527518074260004FDA28 /* WindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManager.h; sourceTree = "<group>"; };
 		6E23527618074260004FDA28 /* WindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManager.m; sourceTree = "<group>"; };
+		6E7607361807E86700D97527 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		6E7607391807ECB500D97527 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		6E76073A1807ECB500D97527 /* Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geometry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,9 @@
 				6E2352731807369D004FDA28 /* Window.m */,
 				6E23527518074260004FDA28 /* WindowManager.h */,
 				6E23527618074260004FDA28 /* WindowManager.m */,
+				6E7607361807E86700D97527 /* Event.h */,
+				6E7607391807ECB500D97527 /* Geometry.h */,
+				6E76073A1807ECB500D97527 /* Geometry.m */,
 			);
 			path = lodoovka;
 			sourceTree = "<group>";
@@ -300,6 +307,7 @@
 				6E23525F180725D5004FDA28 /* NSGradient+radex.m in Sources */,
 				6E235265180725D5004FDA28 /* RPImageButtonCell.m in Sources */,
 				6E23525C180725D5004FDA28 /* NSBezierPath+radex.m in Sources */,
+				6E76073B1807ECB500D97527 /* Geometry.m in Sources */,
 				6E235262180725D5004FDA28 /* NSView+radex.m in Sources */,
 				6E23525E180725D5004FDA28 /* NSColor+radex.m in Sources */,
 				6E235242180724F9004FDA28 /* Screen.m in Sources */,
@@ -465,6 +473,7 @@
 				6E23523C1807248A004FDA28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

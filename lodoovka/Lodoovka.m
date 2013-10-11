@@ -24,21 +24,25 @@ void lodoovka_main()
     lodoovka_redraw();
     wndmgr_init();
     
-    window_sref wnd1 = wndmgr_add(window_create(50, 70, 300, 200));
-    window_sref wnd2 = wndmgr_add(window_create(100, 100, 400, 300));
-    window_sref wnd3 = wndmgr_add(window_create(300, 300, 400, 300));
-    window_sref wnd4 = wndmgr_add(window_create(200, 450, 200, 100));
+    window_ref wnd1 = wndmgr_add(window_create(50, 70,   300, 200, "1"));
+    window_ref wnd2 = wndmgr_add(window_create(100, 100, 400, 300, "2"));
+    window_ref wnd3 = wndmgr_add(window_create(300, 300, 400, 300, "3"));
+    window_ref wnd4 = wndmgr_add(window_create(200, 450, 200, 100, "4"));
+    
+//    [NSTimer in:1 do:^{
+//        wndmgr_order_back(wnd2);
+//    }];
+//    
+//    [NSTimer in:2 do:^{
+//        wndmgr_order_back(wnd4);
+//    }];
     
     [NSTimer in:1 do:^{
-        wndmgr_order_back(wnd2);
+        wndmgr_order_back(wnd3);
     }];
     
     [NSTimer in:2 do:^{
-        wndmgr_order_back(wnd4);
-    }];
-    
-    [NSTimer in:3 do:^{
-        wndmgr_order_back(wnd3);
+        wndmgr_order_front(wnd3);
     }];
 }
 
