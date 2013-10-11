@@ -9,6 +9,7 @@
 #import "Window.h"
 #import "Drawing.h"
 #import "Lodoovka.h"
+#import "WindowManager.h"
 
 window_ref window_create(short x, short y, short w, short h, const char *title)
 {
@@ -81,7 +82,7 @@ void window_draw(window_ref wnd)
     
     setGrey(200);
     
-    drawRectr(window_close_buttonf(frame));
+    WEM_color(WEM_Close, 200, 255) drawRectr(window_close_buttonf(frame));
     WEM_color(WEM_Move, 200, 255) drawRectr(window_titlebarf(frame));
     
     // content
@@ -103,6 +104,10 @@ void window_handle_event(window_ref wnd, Event e)
             wnd->eventmode = WEM_Move;
             wnd->_drag_loc = e.loc;
         }
+        else if(point_in_rect(e.loc, window_close_buttonf(wnd->frame)))
+        {
+            wnd->eventmode = WEM_Close;
+        }
         
         lodoovka_redraw();
     }
@@ -123,6 +128,12 @@ void window_handle_event(window_ref wnd, Event e)
     }
     else if(e.type == ET_MouseUp)
     {
+        if(wnd->eventmode == WEM_Close && point_in_rect(e.loc, window_close_buttonf(wnd->frame)))
+        {
+            wndmgr_close(wnd);
+            return;
+        }
+        
         wnd->eventmode = WEM_None;
         
         lodoovka_redraw();

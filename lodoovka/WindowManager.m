@@ -83,7 +83,31 @@ void wndmgr_order_front(window_ref wnd)
 
 void wndmgr_close(window_ref wnd)
 {
+    window_sref to_close = _wndmgr_find(wnd);
     
+    if(window_stack == to_close)
+    {
+        window_stack = to_close->next;
+    }
+    else
+    {
+        window_sref wnd_before = _wndmgr_find_before(to_close);
+        wnd_before->next = to_close->next;
+    }
+    
+    
+    window_sref sref = window_stack;
+    
+    do
+    {
+        window_stack_tip = sref;
+    }
+    while(sref && (sref = sref->next));
+    
+    // todo: free memory
+    
+    _wndmgr_log_windows();
+    lodoovka_redraw();
 }
 
 window_sref _wndmgr_find(window_ref wnd)
