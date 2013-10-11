@@ -20,68 +20,74 @@ window_ref window_create(short x, short y, short w, short h, const char *title)
     wnd->title = malloc(strlen(title));
     strcpy(wnd->title, title);
     
+    wnd->eventmode = WEM_None;
+    
     return wnd;
 }
+
+#define window_resizer 4
+#define window_cresizer 25
+#define window_titlebar_h 20
+
+#define window_tl_resizerf(frame) tl_corner(inset_recta(frame, 1), window_cresizer, window_cresizer)
+#define window_tr_resizerf(frame) tr_corner(inset_recta(frame, 1), window_cresizer, window_cresizer)
+#define window_br_resizerf(frame) br_corner(inset_recta(frame, 1), window_cresizer, window_cresizer)
+#define window_bl_resizerf(frame) bl_corner(inset_recta(frame, 1), window_cresizer, window_cresizer)
+
+#define _window_tb_resizers(frame) inset_rectb(inset_recta(frame, 1), 0, window_cresizer + 1)
+#define _window_lr_resizers(frame) inset_rectb(inset_recta(frame, 1), window_cresizer + 1, 0)
+
+#define window_t_resizerf(frame)  inset_rectc(_window_tb_resizers(frame), 0, 0, window_resizer, 0)
+#define window_r_resizerf(frame)  inset_rectc(_window_lr_resizers(frame), 0, 0, 0, window_resizer)
+#define window_b_resizerf(frame)  inset_rectc(_window_tb_resizers(frame), window_resizer, 0, 0, 0)
+#define window_l_resizerf(frame)  inset_rectc(_window_lr_resizers(frame), 0, window_resizer, 0, 0)
+
+#define _window_titlebar_area(frame) t_edge(inset_recta(frame, 1+window_resizer+1), window_titlebar_h)
+#define window_close_buttonf(frame) l_edge(_window_titlebar_area(frame), window_titlebar_h)
+#define window_titlebarf(frame) inset_rectc(_window_titlebar_area(frame), 0, 0, 0, window_titlebar_h + 1)
+
+#define window_contentf(frame) inset_rectc(inset_recta(frame, 1+window_resizer+1), window_titlebar_h + 1, 0, 0, 0)
+
+#define WEM_color(mode, normal, highlighted) if(wnd->eventmode == mode){ setGrey(highlighted); } else { setGrey(normal); }
 
 void window_draw(window_ref wnd)
 {
     l_rect frame = wnd->frame;
-    int x = frame.x;
-    int y = frame.y;
-    int w = frame.w;
-    int h = frame.h;
-
-    const int rzr = 4;
-    const int rzr_c = 25;
-    const int rzr_cb = rzr_c + 1;
-    const int ttb = 20;
     
     // border
     
-    setColor(80, 80, 80);
+    setGrey(80);
     drawRectr(frame);
     
-    setColor(200, 200, 200);
-    drawRectr(inset_recta(frame, 1));
-    
     // resizers
-
-    setColor(80, 80, 80);
-    drawRect(x+1,              y+1,                rzr_cb, rzr_cb);
-    drawRect(x+w - (rzr_cb+1), y+1,                rzr_cb, rzr_cb);
-    drawRect(x+1,              y+h - (rzr_cb+1),   rzr_cb, rzr_cb);
-    drawRect(x+w - (rzr_cb+1), y+h - (rzr_cb+1),   rzr_cb, rzr_cb);
-
-    setColor(200, 200, 200);
-    drawRect(x+1,            y+1,              rzr_c, rzr_c);
-    drawRect(x+w - (rzr_cb), y+1,              rzr_c, rzr_c);
-    drawRect(x+1,            y+h - (rzr_cb),   rzr_c, rzr_c);
-    drawRect(x+w - (rzr_cb), y+h - (rzr_cb),   rzr_c, rzr_c);
+    
+    setGrey(200);
+    drawRectr(window_tl_resizerf(frame));
+    drawRectr(window_tr_resizerf(frame));
+    drawRectr(window_br_resizerf(frame));
+    drawRectr(window_bl_resizerf(frame));
+    
+    drawRectr(window_t_resizerf(frame));
+    drawRectr(window_r_resizerf(frame));
+    drawRectr(window_b_resizerf(frame));
+    drawRectr(window_l_resizerf(frame));
     
     // content border
     
-    setColor(80, 80, 80);
-    drawRectr(inset_recta(frame, 1+rzr));
+    setGrey(80);
+    drawRectr(inset_recta(frame, 1 + window_resizer));
     
     // titlebar and close button
     
-    setColor(200, 200, 200);
-    l_rect ttbf = inset_recta(frame, 1+rzr+1);
-    ttbf.h = ttb;
+    setGrey(200);
     
-    l_rect cbtnf = ttbf;
-    cbtnf.w = ttb;
-    drawRectr(cbtnf);
-    
-    ttbf = inset_rectc(ttbf, 0, 0, 0, ttb + 1);
-    drawRectr(ttbf);
+    drawRectr(window_close_buttonf(frame));
+    WEM_color(WEM_Move, 200, 255) drawRectr(window_titlebarf(frame));
     
     // content
     
-    setColor(230, 230, 230);
-    
-    l_rect contf = inset_rectc(inset_recta(frame, 1+rzr+1), ttb + 1, 0, 0, 0);
-    drawRectr(contf);
+    setGrey(230);
+    drawRectr(window_contentf(frame));
 }
 
 
@@ -92,17 +98,32 @@ void window_handle_event(window_ref wnd, Event e)
     
     if(e.type == ET_MouseDown)
     {
-        wnd->_drag_loc = e.loc;
+        if(point_in_rect(e.loc, window_titlebarf(wnd->frame)))
+        {
+            wnd->eventmode = WEM_Move;
+            wnd->_drag_loc = e.loc;
+        }
+        
+        lodoovka_redraw();
     }
     else if(e.type == ET_MouseDrag)
     {
-        short dx = e.loc.x - wnd->_drag_loc.x;
-        short dy = e.loc.y - wnd->_drag_loc.y;
-        
-        wnd->frame.x += dx;
-        wnd->frame.y += dy;
-        
-        wnd->_drag_loc = e.loc;
+        if(wnd->eventmode == WEM_Move)
+        {
+            short dx = e.loc.x - wnd->_drag_loc.x;
+            short dy = e.loc.y - wnd->_drag_loc.y;
+            
+            wnd->frame.x += dx;
+            wnd->frame.y += dy;
+            
+            wnd->_drag_loc = e.loc;
+            
+            lodoovka_redraw();
+        }
+    }
+    else if(e.type == ET_MouseUp)
+    {
+        wnd->eventmode = WEM_None;
         
         lodoovka_redraw();
     }

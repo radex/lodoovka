@@ -40,3 +40,69 @@ l_rect inset_rectc(l_rect rect, short top, short right, short bottom, short left
     
     return rect;
 }
+
+l_rect tl_corner(l_rect rect, short w, short h)
+{
+    rect.w = w;
+    rect.h = h;
+    
+    return rect;
+}
+
+l_rect tr_corner(l_rect rect, short w, short h)
+{
+    rect.x += (rect.w - w);
+    rect.w = w;
+    rect.h = h;
+    
+    return rect;
+}
+
+l_rect br_corner(l_rect rect, short w, short h)
+{
+    rect.y += (rect.h - h);
+    rect.w = w;
+    rect.h = h;
+    
+    return rect;
+}
+
+l_rect bl_corner(l_rect rect, short w, short h)
+{
+    rect.x += (rect.w - w);
+    rect.y += (rect.h - h);
+    rect.w = w;
+    rect.h = h;
+    
+    return rect;
+}
+
+l_rect t_edge(l_rect rect, short h)
+{
+    rect.h = h;
+    
+    return rect;
+}
+
+l_rect r_edge(l_rect rect, short w)
+{
+    rect.x += (rect.w - w);
+    rect.w = w;
+    
+    return rect;
+}
+
+l_rect b_edge(l_rect rect, short h)
+{
+    rect.y += (rect.h - h);
+    rect.h = h;
+    
+    return rect;
+}
+
+l_rect l_edge(l_rect rect, short w)
+{
+    rect.w = w;
+    
+    return rect;
+}
