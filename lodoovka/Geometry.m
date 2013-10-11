@@ -60,6 +60,7 @@ l_rect tr_corner(l_rect rect, short w, short h)
 
 l_rect br_corner(l_rect rect, short w, short h)
 {
+    rect.x += (rect.w - w);
     rect.y += (rect.h - h);
     rect.w = w;
     rect.h = h;
@@ -69,7 +70,6 @@ l_rect br_corner(l_rect rect, short w, short h)
 
 l_rect bl_corner(l_rect rect, short w, short h)
 {
-    rect.x += (rect.w - w);
     rect.y += (rect.h - h);
     rect.w = w;
     rect.h = h;
