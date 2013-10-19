@@ -1,12 +1,5 @@
-//
-//  Drawing.c
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
-
-#import "Drawing.h"
+#include "Drawing.h"
+#include "Logging.h"
 #import "Screen.h"
 #import "AppDelegate.h"
 
@@ -51,4 +44,9 @@ void drawLineH(short x, short y, short l)
 void drawLineV(short x, short y, short l)
 {
     drawRect(x, y, 1, l);
+}
+
+void lodoovka_log(const char *log)
+{
+    NSLog(@"%s", log);
 }

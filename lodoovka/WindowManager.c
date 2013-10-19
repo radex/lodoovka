@@ -1,14 +1,10 @@
-//
-//  WindowManager.m
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
+#include <stdlib.h>
+#include <stdio.h>
 
-#import "WindowManager.h"
-#import "Lodoovka.h"
-#import "Geometry.h"
+#include "WindowManager.h"
+#include "Lodoovka.h"
+#include "Geometry.h"
+#include "Logging.h"
 
 void wndmgr_init()
 {
@@ -143,7 +139,8 @@ void _wndmgr_log_windows()
     
     if(!window_stack) return;
     
-    char *log = "Windows: ";
+    char *log;
+    asprintf(&log, "Windows: ");
     
     do
     {
@@ -151,12 +148,14 @@ void _wndmgr_log_windows()
         {
             char *log2;
             asprintf(&log2, "%s%s, ", log, sref->wnd->title);
+            free(log);
             log = log2;
         }
     }
     while((sref = sref->next));
     
-    NSLog(@"%s", log);
+    lodoovka_log(log);
+    free(log);
 }
 
 window_ref _wndmgr_keywnd = NULL;

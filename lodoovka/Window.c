@@ -1,15 +1,10 @@
-//
-//  Window.m
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
+#include <stdlib.h>
+#include <string.h>
 
-#import "Window.h"
-#import "Drawing.h"
-#import "Lodoovka.h"
-#import "WindowManager.h"
+#include "Window.h"
+#include "Drawing.h"
+#include "Lodoovka.h"
+#include "WindowManager.h"
 
 window_ref window_create(short x, short y, short w, short h, const char *title)
 {

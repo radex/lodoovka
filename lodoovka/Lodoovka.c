@@ -1,18 +1,16 @@
-//
-//  Lodoovka.m
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
+#include <stdlib.h>
+#include <time.h>
 
-#import "Lodoovka.h"
-#import "Drawing.h"
-#import "Window.h"
-#import "WindowManager.h"
+#include "Logging.h"
+#include "Lodoovka.h"
+#include "Drawing.h"
+#include "Window.h"
+#include "WindowManager.h"
 
 void lodoovka_main()
 {
+    srand((unsigned int) time(0));
+    
     lodoovka_redraw();
     wndmgr_init();
 }
@@ -63,13 +61,18 @@ short window_counter = 0;
 
 void plusbtn_clicked()
 {
-    short x = arc4random() % (800 - 50);
-    short y = arc4random() % (600 - 50);
-    short w = arc4random() % (800 - 50) + 50;
-    short h = arc4random() % (600 - 50) + 50;
+    short x = rand() % (800 - 50);
+    short y = rand() % (600 - 50);
+    short w = rand() % (800 - 50) + 50;
+    short h = rand() % (600 - 50) + 50;
     
     char *title;
     asprintf(&title, "%i", window_counter++);
     
     wndmgr_add(window_create(x, y, w, h, title));
+    
+    char *log;
+    asprintf(&log, "Created %s", title);
+    lodoovka_log(log);
+    free(log);
 }

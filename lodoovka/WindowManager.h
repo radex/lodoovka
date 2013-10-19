@@ -1,13 +1,5 @@
-//
-//  WindowManager.h
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
-
-#import "Window.h"
-#import "Event.h"
+#include "Window.h"
+#include "Event.h"
 
 struct StackedWindow {
     window_ref wnd;

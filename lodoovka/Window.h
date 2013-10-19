@@ -1,13 +1,7 @@
-//
-//  Window.h
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
+#pragma once
 
-#import "Geometry.h"
-#import "Event.h"
+#include "Geometry.h"
+#include "Event.h"
 
 enum Window_eventmode
 {

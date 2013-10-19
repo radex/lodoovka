@@ -1,12 +1,6 @@
-//
-//  Drawing.h
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 10.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
+#pragma once
 
-#import "Geometry.h"
+#include "Geometry.h"
 
 void setColor(unsigned char r, unsigned char g, unsigned char b);
 void setGrey(unsigned char g);

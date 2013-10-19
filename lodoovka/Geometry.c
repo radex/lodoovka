@@ -1,24 +1,11 @@
-//
-//  Geometry.m
-//  lodoovka
-//
-//  Created by Radosław Pietruszewski on 11.10.2013.
-//  Copyright (c) 2013 Radosław Pietruszewski. All rights reserved.
-//
+#include "Geometry.h"
 
-#import "Geometry.h"
-
-BOOL point_in_rect(l_point point, l_rect rect)
+char point_in_rect(l_point point, l_rect rect)
 {
-    if(point.x >= rect.x &&
-       point.x <  rect.x + rect.w &&
-       point.y >= rect.y &&
-       point.y <  rect.y + rect.h)
-    {
-        return YES;
-    }
-    
-    return NO;
+    return (point.x >= rect.x &&
+            point.x <  rect.x + rect.w &&
+            point.y >= rect.y &&
+            point.y <  rect.y + rect.h);
 }
 
 l_rect inset_recta(l_rect rect, short inset)
