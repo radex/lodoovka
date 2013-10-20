@@ -20,6 +20,8 @@ void lodoovka_main()
 
 void lodoovka_redraw()
 {
+    startDrawing();
+    
     draw_desktop();
     
     window_sref sref = window_stack;
@@ -36,6 +38,7 @@ void lodoovka_redraw()
     if(!plusbtn) plusbtn = plusbtn_create();
     plusbtn->painter(plusbtn->frame);
     
+    finishDrawing();
 }
 
 void draw_desktop()
