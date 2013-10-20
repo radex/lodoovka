@@ -2,6 +2,7 @@
 
 #include "Geometry.h"
 #include "Event.h"
+#include "View.h"
 
 enum Window_eventmode
 {
@@ -15,18 +16,21 @@ enum Window_eventmode
     WEM_Resize_tl,
     WEM_Resize_tr,
     WEM_Resize_br,
-    WEM_Resize_bl
+    WEM_Resize_bl,
+    WEM_Content
 };
 
-struct Window {
+struct l_window {
     l_rect frame;
     char *title;
+    
+    view_ref content_view;
     
     l_point _drag_loc;
     enum Window_eventmode eventmode;
 };
 
-typedef struct Window* window_ref;
+typedef struct l_window* window_ref;
 
 window_ref window_create(short x, short y, short w, short h, const char *title);
 void window_draw(window_ref wnd);

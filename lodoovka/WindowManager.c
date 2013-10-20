@@ -166,7 +166,7 @@ void wndmgr_hangle_event(Event e)
     {
         if(point_in_rect(e.loc, plusbtn->frame))
         {
-            plusbtn->mouse_down(e);
+            plusbtn->mouse_down(plusbtn, e);
         }
         else
         {

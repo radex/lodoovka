@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E172C391813BBEC0022DF90 /* PlusBtnView.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E172C381813BBEC0022DF90 /* PlusBtnView.c */; };
 		6E172C3B1813BCA30022DF90 /* View.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E172C3A1813BCA30022DF90 /* View.c */; };
+		6E172C3E1813CFD90022DF90 /* TestView.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E172C3D1813CFD90022DF90 /* TestView.c */; };
 		6E23520D18072489004FDA28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E23520C18072489004FDA28 /* Cocoa.framework */; };
 		6E23521718072489004FDA28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E23521518072489004FDA28 /* InfoPlist.strings */; };
 		6E23521918072489004FDA28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23521818072489004FDA28 /* main.m */; };
@@ -42,6 +43,8 @@
 		6E172C371813BB870022DF90 /* PlusBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusBtnView.h; sourceTree = "<group>"; };
 		6E172C381813BBEC0022DF90 /* PlusBtnView.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PlusBtnView.c; sourceTree = "<group>"; };
 		6E172C3A1813BCA30022DF90 /* View.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = View.c; sourceTree = "<group>"; };
+		6E172C3C1813CFBA0022DF90 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		6E172C3D1813CFD90022DF90 /* TestView.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TestView.c; sourceTree = "<group>"; };
 		6E23520918072489004FDA28 /* lodoovka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lodoovka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E23520C18072489004FDA28 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6E23520F18072489004FDA28 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -182,6 +185,8 @@
 				6E172C3A1813BCA30022DF90 /* View.c */,
 				6E172C371813BB870022DF90 /* PlusBtnView.h */,
 				6E172C381813BBEC0022DF90 /* PlusBtnView.c */,
+				6E172C3C1813CFBA0022DF90 /* TestView.h */,
+				6E172C3D1813CFD90022DF90 /* TestView.c */,
 			);
 			path = lodoovka;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				6E23527718074260004FDA28 /* WindowManager.c in Sources */,
 				6E235264180725D5004FDA28 /* RPFlippedView.m in Sources */,
 				6EB9FB4E181316BD0028337A /* Logging.c in Sources */,
+				6E172C3E1813CFD90022DF90 /* TestView.c in Sources */,
 				6E23526E180735FE004FDA28 /* Lodoovka.c in Sources */,
 				6E23525F180725D5004FDA28 /* NSGradient+radex.m in Sources */,
 				6E235265180725D5004FDA28 /* RPImageButtonCell.m in Sources */,

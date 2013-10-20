@@ -15,7 +15,7 @@ view_ref plusbtn_create()
     return plusbtn;
 }
 
-void plusbtn_painter(l_rect f)
+void plusbtn_painter(view_ref view, l_rect f)
 {
     setGrey(80);
     drawRectr(f);
@@ -24,11 +24,11 @@ void plusbtn_painter(l_rect f)
     drawRectr(inset_recta(f, 1));
 }
 
-void plusbtn_mouse_down(l_event e)
+void plusbtn_mouse_down(view_ref view, l_event e)
 {
     lodoovka_add_window();
 }
 
-void plusbtn_mouse_up(l_event e)
+void plusbtn_mouse_up(view_ref view, l_event e)
 {
 }

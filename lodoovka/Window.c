@@ -8,7 +8,7 @@
 
 window_ref window_create(short x, short y, short w, short h, const char *title)
 {
-    window_ref wnd = malloc(sizeof(struct Window));
+    window_ref wnd = malloc(sizeof(struct l_window));
     
     l_rect frame = {x, y, w, h};
     wnd->frame = frame;
@@ -17,6 +17,8 @@ window_ref window_create(short x, short y, short w, short h, const char *title)
     strcpy(wnd->title, title);
     
     wnd->eventmode = WEM_None;
+    
+    wnd->content_view = NULL;
     
     return wnd;
 }
@@ -85,6 +87,14 @@ void window_draw(window_ref wnd)
     
     setGrey(230);
     drawRectr(window_contentf(frame));
+    
+    // views
+    
+    if(wnd->content_view)
+    {
+        l_rect contentf = window_contentf(frame);
+        view_draw(wnd->content_view, contentf);
+    }
 }
 
 
@@ -106,6 +116,15 @@ void window_handle_event(window_ref wnd, Event e)
             {
                 wnd->eventmode = WEM_Close;
             }
+            else if (point_in_rect(e.loc, window_contentf(wnd->frame)))
+            {
+                wnd->eventmode = WEM_Content;
+                
+                if(wnd->content_view && wnd->content_view->mouse_down)
+                {
+                    wnd->content_view->mouse_down(wnd->content_view, e);
+                }
+            }
         }
         else
         {
@@ -120,45 +139,52 @@ void window_handle_event(window_ref wnd, Event e)
             
             wnd->_drag_loc = e.loc;
         }
-        
-        lodoovka_redraw();
     }
     else if(e.type == ET_MouseDrag)
     {
-        short dx = e.loc.x - wnd->_drag_loc.x;
-        short dy = e.loc.y - wnd->_drag_loc.y;
-        
-        if(wnd->eventmode == WEM_Move)
+        if(wnd->eventmode == WEM_Content)
         {
-            wnd->frame.x += dx;
-            wnd->frame.y += dy;
+            if(wnd->content_view && wnd->content_view->mouse_drag)
+            {
+                wnd->content_view->mouse_drag(wnd->content_view, e);
+            }
         }
-        
-        if(wnd->eventmode == WEM_Resize_t || wnd->eventmode == WEM_Resize_tl || wnd->eventmode == WEM_Resize_tr)
+        else
         {
-            wnd->frame.h -= dy;
-            wnd->frame.y += dy;
+            
+            short dx = e.loc.x - wnd->_drag_loc.x;
+            short dy = e.loc.y - wnd->_drag_loc.y;
+            
+            if(wnd->eventmode == WEM_Move)
+            {
+                wnd->frame.x += dx;
+                wnd->frame.y += dy;
+            }
+            
+            if(wnd->eventmode == WEM_Resize_t || wnd->eventmode == WEM_Resize_tl || wnd->eventmode == WEM_Resize_tr)
+            {
+                wnd->frame.h -= dy;
+                wnd->frame.y += dy;
+            }
+            
+            if(wnd->eventmode == WEM_Resize_r || wnd->eventmode == WEM_Resize_tr || wnd->eventmode == WEM_Resize_br)
+            {
+                wnd->frame.w += dx;
+            }
+            
+            if(wnd->eventmode == WEM_Resize_b || wnd->eventmode == WEM_Resize_bl || wnd->eventmode == WEM_Resize_br)
+            {
+                wnd->frame.h += dy;
+            }
+            
+            if(wnd->eventmode == WEM_Resize_l || wnd->eventmode == WEM_Resize_tl || wnd->eventmode == WEM_Resize_bl)
+            {
+                wnd->frame.w -= dx;
+                wnd->frame.x += dx;
+            }
+            
+            wnd->_drag_loc = e.loc;
         }
-        
-        if(wnd->eventmode == WEM_Resize_r || wnd->eventmode == WEM_Resize_tr || wnd->eventmode == WEM_Resize_br)
-        {
-            wnd->frame.w += dx;
-        }
-        
-        if(wnd->eventmode == WEM_Resize_b || wnd->eventmode == WEM_Resize_bl || wnd->eventmode == WEM_Resize_br)
-        {
-            wnd->frame.h += dy;
-        }
-        
-        if(wnd->eventmode == WEM_Resize_l || wnd->eventmode == WEM_Resize_tl || wnd->eventmode == WEM_Resize_bl)
-        {
-            wnd->frame.w -= dx;
-            wnd->frame.x += dx;
-        }
-        
-        wnd->_drag_loc = e.loc;
-        
-        lodoovka_redraw();
     }
     else if(e.type == ET_MouseUp)
     {
@@ -167,9 +193,16 @@ void window_handle_event(window_ref wnd, Event e)
             wndmgr_close(wnd);
             return;
         }
+        else if(wnd->eventmode == WEM_Content)
+        {
+            if(wnd->content_view && wnd->content_view->mouse_up)
+            {
+                wnd->content_view->mouse_up(wnd->content_view, e);
+            }
+        }
         
         wnd->eventmode = WEM_None;
-        
-        lodoovka_redraw();
     }
+    
+    lodoovka_redraw();
 }

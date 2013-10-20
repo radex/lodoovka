@@ -7,6 +7,7 @@
 #include "Drawing.h"
 #include "Window.h"
 #include "WindowManager.h"
+#include "TestView.h"
 
 view_ref plusbtn;
 
@@ -36,7 +37,7 @@ void lodoovka_redraw()
     }
     
     if(!plusbtn) plusbtn = plusbtn_create();
-    plusbtn->painter(plusbtn->frame);
+    plusbtn->painter(plusbtn, plusbtn->frame);
     
     finishDrawing();
 }
@@ -62,7 +63,9 @@ void lodoovka_add_window()
     char *title;
     asprintf(&title, "%i", window_counter++);
     
-    wndmgr_add(window_create(x, y, w, h, title));
+    window_ref wnd = window_create(x, y, w, h, title);
+    wnd->content_view = testview_create(wnd->frame);
+    wndmgr_add(wnd);
     
     lodoovka_logf("Created %s", title);
 }
