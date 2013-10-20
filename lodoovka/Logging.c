@@ -36,3 +36,16 @@ int asprintf(char **ret, const char *format, ...)
     va_end(args);
     return(count);
 }
+
+void lodoovka_logf(const char *format, ...)
+{
+    char *log;
+    
+    va_list args;
+    va_start(args, format);
+    vasprintf(&log, format, args);
+    va_end(args);
+
+    lodoovka_log(log);
+    free(log);
+}

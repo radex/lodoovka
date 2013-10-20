@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #include "Logging.h"
 #include "Lodoovka.h"
@@ -61,18 +62,18 @@ short window_counter = 0;
 
 void plusbtn_clicked()
 {
-    short x = rand() % (800 - 50);
-    short y = rand() % (600 - 50);
-    short w = rand() % (800 - 50) + 50;
-    short h = rand() % (600 - 50) + 50;
-    
+    short w = (rand() % (700 - 100)) + 100;
+    short minh = w * 2/3;
+    short maxh = w * 3/2;
+    short h = (rand() % (maxh - minh)) + minh;
+    if(h > 500) h = 500;
+    short x = (rand() % (800 - w));
+    short y = (rand() % (600 - h));
+        
     char *title;
     asprintf(&title, "%i", window_counter++);
     
     wndmgr_add(window_create(x, y, w, h, title));
     
-    char *log;
-    asprintf(&log, "Created %s", title);
-    lodoovka_log(log);
-    free(log);
+    lodoovka_logf("Created %s", title);
 }
