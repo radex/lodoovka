@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E172C391813BBEC0022DF90 /* PlusBtnView.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E172C381813BBEC0022DF90 /* PlusBtnView.c */; };
+		6E172C3B1813BCA30022DF90 /* View.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E172C3A1813BCA30022DF90 /* View.c */; };
 		6E23520D18072489004FDA28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E23520C18072489004FDA28 /* Cocoa.framework */; };
 		6E23521718072489004FDA28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E23521518072489004FDA28 /* InfoPlist.strings */; };
 		6E23521918072489004FDA28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23521818072489004FDA28 /* main.m */; };
@@ -36,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E172C361813BADC0022DF90 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		6E172C371813BB870022DF90 /* PlusBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusBtnView.h; sourceTree = "<group>"; };
+		6E172C381813BBEC0022DF90 /* PlusBtnView.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PlusBtnView.c; sourceTree = "<group>"; };
+		6E172C3A1813BCA30022DF90 /* View.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = View.c; sourceTree = "<group>"; };
 		6E23520918072489004FDA28 /* lodoovka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lodoovka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E23520C18072489004FDA28 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6E23520F18072489004FDA28 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -172,6 +178,10 @@
 				6E76073A1807ECB500D97527 /* Geometry.c */,
 				6EB9FB4C181316740028337A /* Logging.h */,
 				6EB9FB4D181316BD0028337A /* Logging.c */,
+				6E172C361813BADC0022DF90 /* View.h */,
+				6E172C3A1813BCA30022DF90 /* View.c */,
+				6E172C371813BB870022DF90 /* PlusBtnView.h */,
+				6E172C381813BBEC0022DF90 /* PlusBtnView.c */,
 			);
 			path = lodoovka;
 			sourceTree = "<group>";
@@ -321,7 +331,9 @@
 				6E23526A18072782004FDA28 /* Mac.m in Sources */,
 				6E23525D180725D5004FDA28 /* NSButtonCell+radex.m in Sources */,
 				6E235261180725D5004FDA28 /* NSTimer+radex.m in Sources */,
+				6E172C391813BBEC0022DF90 /* PlusBtnView.c in Sources */,
 				6E235263180725D5004FDA28 /* NSWindow+radex.m in Sources */,
+				6E172C3B1813BCA30022DF90 /* View.c in Sources */,
 				6E2352741807369D004FDA28 /* Window.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

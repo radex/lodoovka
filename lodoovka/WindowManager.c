@@ -164,9 +164,9 @@ void wndmgr_hangle_event(Event e)
 {
     if(e.type == ET_MouseDown)
     {
-        if(point_in_rect(e.loc, plusbtnf()))
+        if(point_in_rect(e.loc, plusbtn->frame))
         {
-            plusbtn_clicked();
+            plusbtn->mouse_down(e);
         }
         else
         {

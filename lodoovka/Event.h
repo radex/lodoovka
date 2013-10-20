@@ -23,3 +23,4 @@ typedef struct Event
     l_point loc;
 } Event;
 
+typedef Event l_event;

@@ -8,6 +8,8 @@
 #include "Window.h"
 #include "WindowManager.h"
 
+view_ref plusbtn;
+
 void lodoovka_main()
 {
     srand((unsigned int) time(0));
@@ -31,7 +33,9 @@ void lodoovka_redraw()
         while((sref = sref->next));
     }
     
-    draw_plusbtn();
+    if(!plusbtn) plusbtn = plusbtn_create();
+    plusbtn->painter(plusbtn->frame);
+    
 }
 
 void draw_desktop()
@@ -40,27 +44,9 @@ void draw_desktop()
     drawRect(0, 0, 800, 600);
 }
 
-l_rect plusbtnf()
-{
-    l_rect lodoovka_screenf = {0, 0, 800, 600};
-    
-    return bl_corner(inset_recta(lodoovka_screenf, 15), 32, 32);
-}
-
-void draw_plusbtn()
-{
-    l_rect f = plusbtnf();
-    
-    setGrey(80);
-    drawRectr(f);
-    drawRectr(inset_rectc(f, 1, -1, -1, 1));
-    setGrey(200);
-    drawRectr(inset_recta(f, 1));
-}
-
 short window_counter = 0;
 
-void plusbtn_clicked()
+void lodoovka_add_window()
 {
     short w = (rand() % (700 - 100)) + 100;
     short minh = w * 2/3;
